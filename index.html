@@ -225,11 +225,11 @@ body {
 section {
   padding: 56px 0;
   border-top: 1px solid var(--border);
-  scroll-margin-top: 80px;
+  scroll-margin-top: 100px;
 }
 
 .hero {
-  scroll-margin-top: 80px;
+  scroll-margin-top: 100px;
 }
 
 .section-label {
@@ -445,18 +445,38 @@ section {
 .resume-fallback {
   display: none;
   text-align: center;
-  padding: 20px;
-  margin-top: 12px;
+  padding: 40px 20px;
+}
+
+.resume-fallback-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 16px;
+  border-radius: 12px;
+  background: var(--accent-bg);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+}
+
+.resume-fallback h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text);
 }
 
 .resume-fallback p {
   color: var(--text-muted);
-  margin-bottom: 12px;
-  font-size: 13px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 @media (max-width: 768px) {
-  .resume-viewer { padding: 8px; }
+  .resume-frame { display: none; }
   .resume-fallback { display: block; }
 }
 
@@ -772,9 +792,13 @@ footer {
     <div class="resume-viewer">
       <iframe src="Ashok_Kumar_S_Resume.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" class="resume-frame" title="Ashok Kumar S Resume" scrolling="no"></iframe>
       <div class="resume-fallback">
-        <p>For a better view on mobile:</p>
+        <div class="resume-fallback-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <h3>View My Resume</h3>
+        <p>Tap below to open my resume as a PDF in a new tab.</p>
         <a href="Ashok_Kumar_S_Resume.pdf" target="_blank" class="contact-btn primary">
-          <i class="ti ti-external-link"></i> Open Resume in New Tab
+          Open Resume (PDF)
         </a>
       </div>
     </div>
