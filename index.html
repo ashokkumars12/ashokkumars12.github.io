@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ashok Kumar S — Software Engineer</title>
+<meta name="description" content="Ashok Kumar S — Software Engineer specializing in Java, Spring Boot, Microservices, and AWS. 4 years of experience building cloud-native systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* Dark theme (default) */
+:root[data-theme="dark"] {
+  --bg: #0a0a0a;
+  --bg-elevated: #141414;
+  --bg-card: #1a1a1a;
+  --bg-hover: #1f1f1f;
+  --border: rgba(255,255,255,0.08);
+  --border-strong: rgba(255,255,255,0.14);
+  --text: #fafafa;
+  --text-muted: #a1a1aa;
+  --text-dim: #71717a;
+  --accent: #60a5fa;
+  --accent-bg: rgba(96,165,250,0.1);
+  --accent-hover: #93c5fd;
+  --nav-bg: rgba(10,10,10,0.85);
+  --cert-bg: rgba(251,191,36,0.1);
+  --cert-color: #fbbf24;
+}
+
+/* Light theme */
+:root[data-theme="light"] {
+  --bg: #ffffff;
+  --bg-elevated: #f8f9fa;
+  --bg-card: #ffffff;
+  --bg-hover: #f1f3f5;
+  --border: rgba(0,0,0,0.08);
+  --border-strong: rgba(0,0,0,0.16);
+  --text: #18181b;
+  --text-muted: #52525b;
+  --text-dim: #71717a;
+  --accent: #2563eb;
+  --accent-bg: rgba(37,99,235,0.08);
+  --accent-hover: #1d4ed8;
+  --nav-bg: rgba(255,255,255,0.85);
+  --cert-bg: rgba(217,119,6,0.1);
+  --cert-color: #d97706;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* --- Mobile / Default Font Size Enhancements --- */
+.nav-brand {
+  font-weight: 600;
+  font-size: 17px; /* Slightly increased for phone */
+  letter-spacing: -0.01em;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 15px; /* Slightly increased for phone */
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.hero h1 {
+  font-size: 44px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-size: 18px; /* Slightly increased for phone */
+  color: var(--text-muted);
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.hero-bio {
+  font-size: 16px; /* Slightly increased for phone */
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 28px;
+  max-width: 640px;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  font-size: 15px; /* Slightly increased for phone */
+  color: var(--text-dim);
+}
+
+.section-label {
+  font-size: 13px; /* Slightly increased for phone */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 40px;
+}
+
+.exp-role {
+  font-size: 19px; /* Slightly increased for phone */
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.exp-date {
+  font-size: 14px; /* Slightly increased for phone */
+  color: var(--text-dim);
+  font-weight: 500;
+  background: var(--bg-elevated);
+  padding: 4px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.exp-company {
+  font-size: 15px; /* Slightly increased for phone */
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.exp-desc {
+  font-size: 15px; /* Slightly increased for phone */
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  line-height: 1.7;
+}
+
+.exp-bullets li {
+  font-size: 15px; /* Slightly increased for phone */
+  color: var(--text-muted);
+  padding-left: 22px;
+  position: relative;
+  line-height: 1.65;
+}
+
+.skill-title {
+  font-size: 15px; /* Slightly increased for phone */
+  font-weight: 600;
+  color: var(--text);
+}
+
+.skill-tag {
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+  padding: 5px 11px;
+  border-radius: 6px;
+  font-size: 13px; /* Slightly increased for phone */
+  font-weight: 500;
+  border: 1px solid var(--border);
+}
+
+.edu-degree { font-size: 18px; font-weight: 600; margin-bottom: 4px; }
+.edu-school { font-size: 15px; color: var(--accent); margin-bottom: 4px; }
+.edu-location { font-size: 14px; color: var(--text-dim); }
+
+.cert-name { font-size: 16px; font-weight: 600; }
+.cert-issuer { font-size: 14px; color: var(--text-muted); }
+
+.contact-title {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.contact-subtitle {
+  font-size: 17px; /* Slightly increased for phone */
+  color: var(--text-muted);
+  margin-bottom: 32px;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 15px; /* Slightly increased for phone */
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 0;
+  text-align: center;
+  font-size: 14px; /* Slightly increased for phone */
+  color: var(--text-dim);
+}
+
+/* --- Layout Base CSS Styles --- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--nav-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+.nav-links a:hover { color: var(--text); }
+
+.theme-toggle {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.15s ease;
+}
+
+.theme-toggle:hover {
+  background: var(--bg-hover);
+  color: var(--text);
+  border-color: var(--border-strong);
+}
+
+.theme-toggle .ti-sun { display: none; }
+:root[data-theme="light"] .theme-toggle .ti-sun { display: block; }
+:root[data-theme="light"] .theme-toggle .ti-moon { display: none; }
+
+.nav-mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.hero {
+  padding: 96px 0 64px;
+  display: flex;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero-photo {
+  flex-shrink: 0;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--border-strong);
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-content { flex: 1; }
+
+.hero-title strong { color: var(--text); font-weight: 600; }
+
+.hero-meta a {
+  color: var(--text-muted);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.15s ease;
+}
+
+.hero-meta a:hover { color: var(--accent); }
+
+.hero-meta i { font-size: 16px; }
+
+section {
+  padding: 56px 0;
+  border-top: 1px solid var(--border);
+  scroll-margin-top: 70px;
+}
+
+.hero {
+  scroll-margin-top: 80px;
+}
+
+.exp-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px;
+  margin-bottom: 16px;
+  transition: border-color 0.2s ease;
+}
+
+.exp-card:hover { border-color: var(--border-strong); }
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.exp-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.exp-bullets li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.exp-bullets strong { color: var(--text); font-weight: 600; }
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.skill-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  transition: border-color 0.2s ease;
+}
+
+.skill-card:hover { border-color: var(--border-strong); }
+
+.skill-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.skill-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--accent-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 18px;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.edu-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.edu-info { flex: 1; min-width: 250px; }
+
+.cert-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cert-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--cert-bg);
+  color: var(--cert-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.resume-viewer {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  position: relative;
+}
+
+.resume-frame {
+  width: 100%;
+  height: 1400px;
+  border: none;
+  border-radius: 8px;
+  background: #ffffff !important;
+  display: block;
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  #resume { display: none; }
+  .nav-link-desktop { display: none; }
+}
+
+.contact-section { text-align: center; padding: 80px 0; }
+
+.contact-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact-btn.primary {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+
+.contact-btn.primary:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+/* --- Media Query: Desktop Size Font Increases --- */
+@media (min-width: 769px) {
+  .nav-brand { font-size: 19px; }
+  .nav-links a { font-size: 16px; }
+  .hero h1 { font-size: 52px; }
+  .hero-title { font-size: 20px; }
+  .hero-bio { font-size: 18px; max-width: 720px; }
+  .hero-meta { font-size: 16px; }
+  .section-label { font-size: 14px; }
+  .section-title { font-size: 34px; }
+  .exp-role { font-size: 22px; }
+  .exp-company { font-size: 16px; }
+  .exp-date { font-size: 14px; }
+  .exp-desc, .exp-bullets li { font-size: 16px; }
+  .skill-title { font-size: 17px; }
+  .skill-tag { font-size: 14px; }
+  .edu-degree { font-size: 20px; }
+  .edu-school { font-size: 16px; }
+  .edu-location { font-size: 15px; }
+  .cert-name { font-size: 18px; }
+  .cert-issuer { font-size: 15px; }
+  .contact-title { font-size: 38px; }
+  .contact-subtitle { font-size: 19px; }
+  .contact-btn { font-size: 16px; }
+  footer { font-size: 15px; }
+}
+
+/* --- Responsive Layout Structure Changes --- */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg-elevated);
+    flex-direction: column;
+    padding: 20px 24px;
+    gap: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-mobile-toggle { display: block; }
+  .hero { flex-direction: column; align-items: flex-start; gap: 24px; padding: 32px 0 24px; scroll-margin-top: 70px; }
+  .hero-photo { width: 100px; height: 100px; }
+  .hero h1 { font-size: 34px; } /* Slightly bumped on mobile */
+  .hero-title { font-size: 16px; }
+  .exp-header { flex-direction: column; align-items: flex-start; }
+  .section-title { font-size: 24px; } /* Slightly bumped on mobile */
+  .contact-title { font-size: 26px; } /* Slightly bumped on mobile */
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-brand">Ashok Kumar S</a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li class="nav-link-desktop"><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+        <i class="ti ti-moon"></i>
+        <i class="ti ti-sun"></i>
+      </button>
+      <button class="nav-mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')"><i class="ti ti-menu-2"></i></button>
+    </div>
+  </div>
+</nav>
+
+<div class="container" id="top">
+
+  <section class="hero" id="about" style="border-top:none;">
+    <div class="hero-photo">
+      <img src="profile.png" alt="Ashok Kumar S">
+    </div>
+    <div class="hero-content">
+      <h1>Ashok Kumar S</h1>
+      <p class="hero-bio">
+        Software Engineer with 4 years of experience designing and delivering scalable, secure microservices and REST APIs using Java, Spring Boot, and AWS. Proven track record building resilient APIs, optimizing performance with asynchronous patterns, and automating CI/CD pipelines with DevSecOps quality gates. Skilled in cross-functional collaboration and Agile delivery.
+      </p>
+      <div class="hero-meta">
+        <a href="mailto:ashokkumar1010494@gmail.com"><i class="ti ti-mail"></i> ashokkumar1010494@gmail.com</a>
+        <a href="https://linkedin.com/in/ashokkumars12" target="_blank"><i class="ti ti-brand-linkedin"></i> LinkedIn</a>
+        <span><i class="ti ti-map-pin"></i> Chennai, India</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="section-label">Career</div>
+    <h2 class="section-title">Experience</h2>
+
+    <div class="exp-card">
+      <div class="exp-header">
+        <div>
+          <div class="exp-role">Software Engineer</div>
+          <div class="exp-company">Cognizant Technology Solutions · Chennai, TN</div>
+        </div>
+        <div class="exp-date">Jul 2025 — Present</div>
+      </div>
+      <p class="exp-desc">Group Benefits (Insurance / Financial Services) platform serving enterprise clients — building and maintaining production microservices for employee onboarding, terminations, dependent management, coverages, and billing workflows.</p>
+      <ul class="exp-bullets">
+        <li>Developed and maintained <strong>10+ Java Spring Boot microservices</strong> using RESTful API design and layered architecture (Controller, Service, DAO, Repository, Entity), supporting enterprise Group Benefits clients in a financial-services domain.</li>
+        <li>Architected inter-service communication with <strong>Spring WebClient</strong> through a centralized shared library, standardizing HTTP request/response handling across all 10+ services and eliminating duplicated integration boilerplate.</li>
+        <li>Optimized API response times by parallelizing independent downstream calls with <strong>@Async and CompletableFuture</strong>, replacing sequential blocking calls with concurrent non-blocking execution.</li>
+        <li>Deployed containerized microservices on <strong>AWS ECS with auto-scaling</strong> (min 2 / max 6 tasks) and configured <strong>AWS ALB</strong> with round-robin load balancing, session stickiness, and health checks, enabling zero-downtime deployments.</li>
+        <li>Engineered multi-stage CI/CD pipelines with <strong>Jenkins, AWS CodePipeline, and Terraform</strong>, enabling fully automated infrastructure-as-code deployments from commit to ECS.</li>
+        <li>Implemented <strong>Redis distributed caching</strong> as a shared cache layer across microservices, reducing repeated external API calls by 50% and reducing backend database load.</li>
+        <li>Hardened application security by managing secrets and runtime configuration through <strong>HashiCorp Vault and AWS Secrets Manager</strong>, eliminating hardcoded credentials across services.</li>
+      </ul>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-header">
+        <div>
+          <div class="exp-role">Junior Software Engineer</div>
+          <div class="exp-company">Cognizant Technology Solutions · Chennai, TN</div>
+        </div>
+        <div class="exp-date">Oct 2022 — Jun 2025</div>
+      </div>
+      <p class="exp-desc">Java 8 / Spring Boot API development, batch processing, and production support.</p>
+      <ul class="exp-bullets">
+        <li>Built high-performance <strong>REST APIs with Java 8, Spring Boot, and Oracle/PostgreSQL</strong>, backed by JUnit and JaCoCo coverage, handling thousands of daily requests at sub-200ms latency.</li>
+        <li>Developed secure authentication flows using <strong>Spring Security</strong> with <strong>OAuth2 </strong> and <strong>JWT</strong> tokens, enabling centralized <strong>SSO</strong> and <strong>role-based access control</strong> across 10+ microservices.</li>
+        <li>Automated a recurring <strong>Java batch job with Linux shell scripting</strong> and integrated it into <strong>Autosys</strong> for scheduled execution, removing manual intervention and ensuring reliable unattended runs.</li>
+        <li>Performed root-cause analysis using <strong>Splunk and the JBoss console</strong> for log analysis and <strong>Dynatrace</strong> for performance monitoring, resolving application defects before release.</li>
+        <li>Improved <strong>code quality by 25%</strong> via SonarQube standards and remediated <strong>critical/high-severity vulnerabilities by 30%</strong> using <strong>Checkmarx (SAST)</strong> and OWASP best practices.</li>
+        <li>Implemented <strong>Tealium Analytics event tracking</strong> in <strong>Angular UI components</strong> to capture user interaction metrics for product and feature-usage insights.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="section-label">Toolkit</div>
+    <h2 class="section-title">Technical Skills</h2>
+
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-card-header">
+          <div class="skill-icon"><i class="ti ti-code"></i></div>
+          <div class="skill-title">Languages & Frameworks</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">Spring Boot</span>
+          <span class="skill-tag">Core Java</span>
+          <span class="skill-tag">Spring WebClient</span>
+          <span class="skill-tag">Spring Data JPA</span>
+          <span class="skill-tag">Spring Security</span>
+          <span class="skill-tag">REST APIs</span>
+          <span class="skill-tag">Microservices</span>
+          <span class="skill-tag">SOAP</span>
+          <span class="skill-tag">CompletableFuture</span>
+          <span class="skill-tag">JUnit</span>
+          <span class="skill-tag">JaCoCo</span>
+          <span class="skill-tag">Maven</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">Python</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-header">
+          <div class="skill-icon"><i class="ti ti-cloud"></i></div>
+          <div class="skill-title">Cloud & Infrastructure</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">AWS ECS</span>
+          <span class="skill-tag">AWS ECR</span>
+          <span class="skill-tag">AWS ALB</span>
+          <span class="skill-tag">OpenShift Container Platform</span>
+          <span class="skill-tag">Linux</span>
+          <span class="skill-tag">JBoss</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-header">
+          <div class="skill-icon"><i class="ti ti-rocket"></i></div>
+          <div class="skill-title">DevOps & CI/CD</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">Terraform (IaC)</span>
+          <span class="skill-tag">Jenkins</span>
+          <span class="skill-tag">AWS CodePipeline</span>
+          <span class="skill-tag">CI/CD Pipelines</span>
+          <span class="skill-tag">uDeploy</span>
+          <span class="skill-tag">Shell Scripting</span>
+          <span class="skill-tag">Autosys</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-header">
+          <div class="skill-icon"><i class="ti ti-database"></i></div>
+          <div class="skill-title">Databases & Caching</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Oracle</span>
+          <span class="skill-tag">PostgreSQL</span>
+          <span class="skill-tag">Redis</span>
+          <span class="skill-tag">JDBC</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-header">
+          <div class="skill-icon"><i class="ti ti-shield-lock"></i></div>
+          <div class="skill-title">Security & Quality</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">OAuth2</span>
+          <span class="skill-tag">JWT</span>
+          <span class="skill-tag">HashiCorp Vault</span>
+          <span class="skill-tag">AWS Secrets Manager</span>
+          <span class="skill-tag">SonarQube</span>
+          <span class="skill-tag">Checkmarx (SAST)</span>
+          <span class="skill-tag">Nexus IQ</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-header">
+          <div class="skill-icon"><i class="ti ti-activity"></i></div>
+          <div class="skill-title">Observability & Tools</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Dynatrace</span>
+          <span class="skill-tag">Splunk</span>
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">Postman</span>
+          <span class="skill-tag">IntelliJ IDEA</span>
+          <span class="skill-tag">JIRA</span>
+          <span class="skill-tag">Agile/Scrum</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-header">
+          <div class="skill-icon"><i class="ti ti-brand-html5"></i></div>
+          <div class="skill-title">Frontend <span style="color:var(--text-dim);font-weight:400;font-size:12px;">(Working Knowledge)</span></div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Angular</span>
+          <span class="skill-tag">HTML</span>
+          <span class="skill-tag">CSS</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">TypeScript</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="section-label">Background</div>
+    <h2 class="section-title">Education & Certifications</h2>
+
+    <div class="edu-card" style="margin-bottom:16px;">
+      <div class="edu-info">
+        <div class="edu-degree">Panimalar Engineering College</div>
+        <div class="edu-school">Anna University · B.E. Electronics and Communication</div>
+        <div class="edu-location">Chennai, India</div>
+      </div>
+      <div class="exp-date">Aug 2018 — Jun 2022</div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-icon"><i class="ti ti-award"></i></div>
+      <div>
+        <div class="cert-name">AWS Certified Cloud Practitioner</div>
+        <div class="cert-issuer">Amazon Web Services</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="resume">
+    <div class="section-label">Document</div>
+    <h2 class="section-title">Resume</h2>
+    <div class="resume-viewer">
+      <iframe src="Ashok_Kumar_S_Resume.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" class="resume-frame" title="Ashok Kumar S Resume" scrolling="no"></iframe>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+    <h2 class="contact-title">Let's connect</h2>
+    <p class="contact-subtitle">Open to Software Engineer / SDE opportunities — India-based or remote global</p>
+    <div class="contact-buttons">
+      <a href="mailto:ashokkumar1010494@gmail.com" class="contact-btn primary">
+        <i class="ti ti-mail"></i> Email Me
+      </a>
+      <a href="https://linkedin.com/in/ashokkumars12" target="_blank" class="contact-btn">
+        <i class="ti ti-brand-linkedin"></i> LinkedIn
+      </a>
+      <a href="https://github.com/ashokkumars12" target="_blank" class="contact-btn">
+        <i class="ti ti-brand-github"></i> GitHub
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  © 2026 Ashok Kumar S
+</footer>
+
+<script>
+  // Load saved theme or default to dark
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+
+  function toggleTheme() {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  }
+
+  // Auto-close mobile nav when a link is clicked
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      document.querySelector('.nav-links').classList.remove('open');
+      // For About link, scroll to absolute top instead of section anchor
+      if (link.getAttribute('href') === '#about') {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Brand name click should scroll to absolute top
+  const brand = document.querySelector('.nav-brand');
+  if (brand) {
+    brand.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // Dynamically size resume iframe to match US Letter aspect (8.5x11)
+  function sizeResumeFrame() {
+    const frame = document.querySelector('.resume-frame');
+    if (!frame) return;
+    const width = frame.offsetWidth;
+    // US Letter ratio: 11/8.5 = ~1.294
+    // Use 1.30 — just slightly taller than exact ratio to prevent scroll
+    frame.style.height = (width * 1.30) + 'px';
+  }
+  window.addEventListener('load', sizeResumeFrame);
+  window.addEventListener('resize', sizeResumeFrame);
+  // Recalculate after a short delay (PDF takes time to render)
+  setTimeout(sizeResumeFrame, 500);
+  setTimeout(sizeResumeFrame, 1500);
+</script>
+
+</body>
+</html>
